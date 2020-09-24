@@ -2,12 +2,16 @@
 #
 .DS_Store
 
-# build
+
+# log
 #
-lib/
+*.log
 
 # node.js
 #
-node_modules/
+node_modules
 npm-debug.log
-yarn-error.log
+
+# example
+#
+example
