@@ -21,6 +21,6 @@
     "react-native/no-single-element-style-arrays": "warn",
     "no-sequences": "off",
     "one-var": ["error", "never"],
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
   }
 }
