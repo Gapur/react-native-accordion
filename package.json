@@ -15,8 +15,15 @@
     "type": "git",
     "url": "https://github.com/Gapur/react-native-accordion.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "accordion",
+    "react-native-component",
+    "native"
+  ],
+  "author": "Gapur Kassym <gapur.kassym@gmail.com> (https://github.com/Gapur)",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.9.49",
@@ -24,7 +31,6 @@
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "eslint": "^7.9.0",
-    "eslint-config-airbnb-typescript": "^10.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",

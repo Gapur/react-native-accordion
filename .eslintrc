@@ -22,5 +22,6 @@
     "no-sequences": "off",
     "one-var": ["error", "never"],
     "react-hooks/rules-of-hooks": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
