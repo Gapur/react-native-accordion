@@ -1,4 +1,4 @@
 export const images = {
-  arrowUp: require("./arrow-up.png"),
-  arrowDown: require("./arrow-down.png"),
+  arrowUp: require("../../src/assets/arrow-up.png"),
+  arrowDown: require("../../src/assets/arrow-down.png"),
 };

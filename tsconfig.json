@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ES6",
     "module": "CommonJS",
     "jsx": "react-native",
@@ -9,10 +10,13 @@
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": {
+      "root/*": ["./*"]
+    }
   },
-  "exclude": ["example/node_modules", "lib"],
   "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts"
-  ]
+    "./src/**/*",
+  ],
+  "exclude": ["node_modules", "example/node_modules", "lib"]
 }

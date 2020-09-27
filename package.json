@@ -1,7 +1,6 @@
 {
-  "name": "react-native-accordion",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@gapur/react-native-accordion",
+  "version": "1.0.3",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -13,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gapur/react-native-accordion.git"
+    "url": "git+https://github.com/Gapur/react-native-accordion.git"
   },
   "keywords": [
     "react",
@@ -21,10 +20,18 @@
     "react-component",
     "accordion",
     "react-native-component",
-    "native"
+    "native",
+    "mobile",
+    "ios",
+    "android",
+    "collapse"
   ],
   "author": "Gapur Kassym <gapur.kassym@gmail.com> (https://github.com/Gapur)",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gapur/react-native-accordion/issues"
+  },
+  "homepage": "https://github.com/Gapur/react-native-accordion#readme",
   "devDependencies": {
     "@types/react": "^16.9.49",
     "@types/react-native": "^0.63.22",

@@ -1,40 +1,29 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, ScrollView, View, Text } from "react-native";
+import { SafeAreaView, StyleSheet, View, Text } from "react-native";
+import Accordion from "@gapur/react-native-accordion";
 
-import { Header, Colors } from "react-native/Libraries/NewAppScreen";
+import { colors } from "./constants";
 
 function App() {
   return (
     <SafeAreaView>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={styles.scrollView}>
-        <Header />
-        {global.HermesInternal == null ? null : (
-          <View style={styles.engine}>
-            <Text style={styles.footer}>Engine: Hermes</Text>
-          </View>
-        )}
-      </ScrollView>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>react-native-accordion</Text>
+      </View>
+      <Accordion headerTitle="First">
+        <Text>This content is hidden in the accordion</Text>
+      </Accordion>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  engine: {
-    position: "absolute",
-    right: 0,
+  header: {
+    backgroundColor: colors.kellyGreen,
   },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: "600",
-    padding: 4,
-    paddingRight: 12,
-    textAlign: "right",
-  },
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  headerTitle: {
+    fontSize: 14,
+    fontWeight: "400",
   },
 });
 

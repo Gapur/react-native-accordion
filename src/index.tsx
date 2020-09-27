@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import * as React from "react";
 import { View, Text, StyleSheet, Image, LayoutAnimation, TouchableOpacity, Platform, UIManager } from "react-native";
 
-import { images } from "./assets";
+import { images } from "../src/assets";
 
 interface AccordionProps {
   headerTitle: string;
@@ -14,7 +14,7 @@ if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental
 }
 
 export default function Accordion({ headerTitle, children, renderHeader }: AccordionProps) {
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = React.useState(false);
   const renderAccordionHeader = () => {
     if (renderHeader) {
       return renderHeader();
