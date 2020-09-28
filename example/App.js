@@ -1,7 +1,13 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, View, Text, Image } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  FlatList,
+} from "react-native";
 import Accordion from "@gapur/react-native-accordion";
-import faker from "faker";
 
 import {
   colors,
@@ -15,10 +21,10 @@ const [FACEBOOK, WHATSAPP, INSTAGRAM] = SOCIAL_APPS;
 function App() {
   const renderAccordionHeader = () => (
     <View style={styles.headerRow}>
-      <Image style={styles.whatsapp} source={WHATSAPP.imageUrl} />
+      <Image style={styles.socialImage} source={FACEBOOK.imageUrl} />
       <View style={styles.headerValue}>
-        <Text style={styles.headerLabelText}>{WHATSAPP.title}</Text>
-        <Text style={styles.headerValueText}>{WHATSAPP.description}</Text>
+        <Text style={styles.headerLabelText}>{FACEBOOK.title}</Text>
+        <Text style={styles.headerValueText}>{FACEBOOK.description}</Text>
       </View>
     </View>
   );
@@ -31,23 +37,42 @@ function App() {
         </View>
       </SafeAreaView>
       <Accordion
+        showButton
         style={styles.accordion}
         renderHeader={() => renderAccordionHeader()}>
         <View style={styles.headerRow}>
-          <Image style={styles.whatsapp} source={FACEBOOK.imageUrl} />
+          <Image style={styles.socialImage} source={WHATSAPP.imageUrl} />
           <View style={styles.headerValue}>
-            <Text style={styles.headerLabelText}>{FACEBOOK.title}</Text>
-            <Text style={styles.headerValueText}>{FACEBOOK.description}</Text>
+            <Text style={styles.headerLabelText}>{WHATSAPP.title}</Text>
+            <Text style={styles.headerValueText}>{WHATSAPP.description}</Text>
           </View>
         </View>
         <View style={styles.headerRow}>
-          <Image style={styles.whatsapp} source={INSTAGRAM.imageUrl} />
+          <Image style={styles.socialImage} source={INSTAGRAM.imageUrl} />
           <View style={styles.headerValue}>
             <Text style={styles.headerLabelText}>{INSTAGRAM.title}</Text>
             <Text style={styles.headerValueText}>{INSTAGRAM.description}</Text>
           </View>
         </View>
       </Accordion>
+
+      <FlatList
+        data={SOCIAL_APPS}
+        keyExtractor={(company) => String(company.title)}
+        renderItem={({ item }) => {
+          return (
+            <Accordion
+              style={styles.flatAccordion}
+              headerTitle={item.title}
+              showButton={false}>
+              <View style={styles.headerRow}>
+                <Image style={styles.socialImage} source={item.imageUrl} />
+                <Text style={styles.headerValueText}>{item.description}</Text>
+              </View>
+            </Accordion>
+          );
+        }}
+      />
     </View>
   );
 }
@@ -70,6 +95,22 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 10,
   },
+  flatAccordion: {
+    backgroundColor: colors.white,
+    borderRadius: 10,
+    elevation: 1,
+    marginHorizontal: 12,
+    marginTop: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    shadowColor: colors.biscay,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+  },
   header: {
     alignItems: "center",
     backgroundColor: colors.white,
@@ -85,7 +126,8 @@ const styles = StyleSheet.create({
   },
   headerRow: {
     flexDirection: "row",
-    marginBottom: 11,
+    marginBottom: 10,
+    marginTop: 10,
   },
   headerTitle: {
     fontSize: 17,
@@ -114,8 +156,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexGrow: 1,
   },
-  whatsapp: {
+  socialImage: {
     height: 20,
+    marginRight: 4,
     width: 20,
   },
 });

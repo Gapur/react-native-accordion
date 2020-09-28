@@ -21,7 +21,8 @@ export const colors = {
 export const SOCIAL_APPS = [
   {
     title: "Facebook",
-    description: "Connect with friends and the world around you on Facebook.",
+    description:
+      "Connect with friends and the world around you on Facebook. With over 2.7 billion monthly active users as of the second quarter of 2020, Facebook is the biggest social network worldwide.",
     bgColor: "#3B5998",
     imageUrl: images.facebook,
   },
@@ -34,7 +35,8 @@ export const SOCIAL_APPS = [
   },
   {
     title: "Instagram",
-    description: "Bringing you closer to the people and things you love.",
+    description:
+      "Bringing you closer to the people and things you love. Total Number of Monthly Active Instagram Users: 1 billion +",
     bgColor: "#C13584",
     imageUrl: images.instagram,
   },
