@@ -1,9 +1,20 @@
 import * as React from "react";
-import { View, Text, StyleSheet, Image, LayoutAnimation, TouchableOpacity, Platform, UIManager } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  LayoutAnimation,
+  TouchableOpacity,
+  Platform,
+  UIManager,
+  ViewStyle,
+} from "react-native";
 
 import { images } from "../src/assets";
 
 interface AccordionProps {
+  style?: ViewStyle;
   headerTitle: string;
   children: React.ReactNode;
   renderHeader?: () => void;
@@ -13,8 +24,9 @@ if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-export default function Accordion({ headerTitle, children, renderHeader }: AccordionProps) {
+export default function Accordion({ style = {}, headerTitle, children, renderHeader }: AccordionProps) {
   const [showContent, setShowContent] = React.useState(false);
+
   const renderAccordionHeader = () => {
     if (renderHeader) {
       return renderHeader();
@@ -28,7 +40,7 @@ export default function Accordion({ headerTitle, children, renderHeader }: Accor
   };
 
   return (
-    <View>
+    <View style={style}>
       {renderAccordionHeader()}
       {showContent && children}
       <TouchableOpacity style={styles.arrowBtn} onPress={handleToggleContent}>
