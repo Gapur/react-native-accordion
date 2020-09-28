@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@gapur/react-native-accordion": "file:../",
+    "faker": "^5.1.0",
     "react": "16.13.1",
-    "react-native": "0.63.2"
+    "react-native": "0.63.2",
+    "react-native-status-bar-height": "^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
