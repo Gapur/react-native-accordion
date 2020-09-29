@@ -14,7 +14,7 @@ import {
 
 import { images } from "../src/assets";
 
-interface AccordionProps {
+export interface AccordionProps {
   style?: ViewStyle;
   headerTitleContainer?: ViewStyle;
   headerTitle: string;
@@ -22,7 +22,7 @@ interface AccordionProps {
   children: React.ReactNode;
   showButton?: boolean;
   buttonStyle?: ViewStyle;
-  renderHeader?: () => void;
+  renderHeader?: () => React.ReactNode;
   renderButtonContent?: () => React.ReactNode;
 }
 
@@ -52,11 +52,7 @@ export default function Accordion({
     if (renderHeader) {
       return renderHeader();
     }
-    return (
-      <TouchableOpacity style={headerTitleContainer} disabled={showButton} onPress={handleToggleContent}>
-        <Text style={[styles.headerText, headerTitleStyle]}>{headerTitle}</Text>
-      </TouchableOpacity>
-    );
+    return <Text style={[styles.headerText, headerTitleStyle]}>{headerTitle}</Text>;
   };
 
   const renderBtnContent = () => {
@@ -67,8 +63,10 @@ export default function Accordion({
   };
 
   return (
-    <View style={style}>
-      {renderAccordionHeader()}
+    <View style={[styles.accordion, style]}>
+      <TouchableOpacity style={headerTitleContainer} disabled={showButton} onPress={handleToggleContent}>
+        {renderAccordionHeader()}
+      </TouchableOpacity>
       {showContent && children}
       {showButton && (
         <TouchableOpacity style={[styles.arrowBtn, buttonStyle]} onPress={handleToggleContent}>
@@ -80,6 +78,22 @@ export default function Accordion({
 }
 
 const styles = StyleSheet.create({
+  accordion: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 10,
+    elevation: 1,
+    marginHorizontal: 12,
+    marginTop: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    shadowColor: "#2B3857",
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+  },
   arrowBtn: {
     alignItems: "center",
   },

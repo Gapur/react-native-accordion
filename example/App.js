@@ -59,19 +59,14 @@ function App() {
       <FlatList
         data={SOCIAL_APPS}
         keyExtractor={(company) => String(company.title)}
-        renderItem={({ item }) => {
-          return (
-            <Accordion
-              style={styles.flatAccordion}
-              headerTitle={item.title}
-              showButton={false}>
-              <View style={styles.headerRow}>
-                <Image style={styles.socialImage} source={item.imageUrl} />
-                <Text style={styles.headerValueText}>{item.description}</Text>
-              </View>
-            </Accordion>
-          );
-        }}
+        renderItem={({ item }) => (
+          <Accordion headerTitle={item.title}>
+            <View style={styles.headerRow}>
+              <Image style={styles.socialImage} source={item.imageUrl} />
+              <Text style={styles.headerValueText}>{item.description}</Text>
+            </View>
+          </Accordion>
+        )}
       />
     </View>
   );
@@ -94,22 +89,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 1,
     shadowRadius: 10,
-  },
-  flatAccordion: {
-    backgroundColor: colors.white,
-    borderRadius: 10,
-    elevation: 1,
-    marginHorizontal: 12,
-    marginTop: 12,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    shadowColor: colors.biscay,
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
   },
   header: {
     alignItems: "center",

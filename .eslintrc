@@ -19,6 +19,7 @@
     "react-native/no-unused-styles": "warn",
     "@typescript-eslint/no-unnecessary-condition": "off",
     "react-native/no-single-element-style-arrays": "warn",
+    "react-native/no-color-literals": "off",
     "no-sequences": "off",
     "one-var": ["error", "never"],
     "react-hooks/rules-of-hooks": "error",
