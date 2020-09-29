@@ -16,7 +16,7 @@ import { images } from "../src/assets";
 
 export interface AccordionProps {
   style?: ViewStyle;
-  headerTitleContainer?: ViewStyle;
+  headerStyle?: ViewStyle;
   headerTitle: string;
   headerTitleStyle?: TextStyle;
   children: React.ReactNode;
@@ -32,7 +32,7 @@ if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental
 
 export default function Accordion({
   style = {},
-  headerTitleContainer = {},
+  headerStyle = {},
   headerTitle,
   headerTitleStyle = {},
   children,
@@ -64,7 +64,7 @@ export default function Accordion({
 
   return (
     <View style={[styles.accordion, style]}>
-      <TouchableOpacity style={headerTitleContainer} disabled={showButton} onPress={handleToggleContent}>
+      <TouchableOpacity style={headerStyle} disabled={showButton} onPress={handleToggleContent}>
         {renderAccordionHeader()}
       </TouchableOpacity>
       {showContent && children}
