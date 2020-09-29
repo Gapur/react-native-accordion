@@ -7,7 +7,7 @@ Animated accordion component for React Native
 
 ## Example app
 
-![image](screenshot.gif)
+![image](example-app.gif)
 
 ## Installation
 
