@@ -1,8 +1,5 @@
 # react-native-accordion
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
-
-
 Animated accordion component for React Native
 
 ## Example app
