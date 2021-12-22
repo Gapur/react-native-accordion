@@ -9,7 +9,7 @@ Animated accordion component for React Native
 ## Installation
 
 ```bash
-npm install --save @gapur/react-native-accordion
+npm install --save @meecode/react-native-accordion
 ```
 
 ## Usage
