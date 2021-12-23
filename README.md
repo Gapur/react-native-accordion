@@ -9,7 +9,7 @@ Animated accordion component for React Native with React 17 and React Native 0.6
 ## Installation
 
 ```bash
-npm install --save @meecode/react-native-accordion
+npm install --save @gapur/react-native-accordion
 ```
 
 ## Usage
