@@ -56,7 +56,7 @@ You can also show arrow button on the bottom and override accordion header conte
 ## Running example app
 
 ```sh
-git clone https://github.com/Gapur/react-native-accordion.git
+git clone git@github.com:Gapur/react-native-accordion.git
 cd react-native-accordion/example
 yarn
 npm run ios
