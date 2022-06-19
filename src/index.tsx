@@ -23,7 +23,7 @@ export interface AccordionProps {
   showButton?: boolean;
   buttonStyle?: ViewStyle;
   renderHeader?: () => React.ReactNode;
-  renderButtonContent?: () => React.ReactNode;
+  renderButtonContent?: (showContent: boolean) => React.ReactNode;
 }
 
 if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -57,7 +57,7 @@ export default function Accordion({
 
   const renderBtnContent = () => {
     if (renderButtonContent) {
-      return renderButtonContent();
+      return renderButtonContent(showContent);
     }
     return <Image style={styles.arrowBtnIcon} source={showContent ? images.arrowUp : images.arrowDown} />;
   };
