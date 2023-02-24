@@ -1,4 +1,4 @@
-# react-native-accordion
+# React Native Accordion
 
 Animated accordion component for React Native with React 17 and React Native 0.64.3 Support
 
