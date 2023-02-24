@@ -2,8 +2,6 @@
 
 Animated accordion component for React Native with React 17 and React Native 0.64.3 Support
 
-[![All Contributors](https://img.shields.io/github/Gapur/Gapur/react-native-accordion?color=ee8449&style=flat-square)](#contributors)
-
 ## Example app
 
 ![image](example-app.gif)
